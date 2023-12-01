@@ -1,0 +1,6 @@
+in.txt
+solution.py
+test.txt
+!*/in.txt
+!*/solution.py
+!*/test.txt
