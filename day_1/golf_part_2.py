@@ -1,0 +1,2 @@
+import re
+print(sum(map(int,([(a:=re.findall((r:="one|two|three|four|five|six|seven|eight|nine|1|2|3|4|5|6|7|8|9"),i)[0]),f"{(x:=r.split('|')).index(a)+1}"][bool(len(a)-1)]+[(b:=re.findall(r[::-1],i[::-1])[0][::-1]),f"{x.index(b)+1}"][bool(len(b)-1)]for i in open(0)))))
