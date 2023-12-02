@@ -3,12 +3,15 @@
 games = open(0).read().strip().split("\n")
 valid_games = []
 part_2 = 0
+default_color_counter = {"blue": 0, "red": 0, "green": 0}
 
 
 def parse_game(game):
-    data = game.split(": ")
-    game_id = data[0][5:]
-    rounds = data[1].split("; ")
+    game_id, rounds = game.split(": ")
+
+    game_id = game_id[5:]
+
+    rounds = rounds.split("; ")
     rounds = [r.split(", ") for r in rounds]
 
     return game_id, rounds
@@ -20,11 +23,11 @@ for game in games:
     valid_games.append(game_id)
 
     temp_rounds = []
-    color_min = {"blue": 0, "red": 0, "green": 0}
+    color_min = default_color_counter
     found = False
 
     for idx, subarray in enumerate(rounds):
-        color_counter = {"blue": 0, "red": 0, "green": 0}
+        color_counter = default_color_counter
         # Iterate through each element in the subarray
         for element in subarray:
             # Split the element into count and color
