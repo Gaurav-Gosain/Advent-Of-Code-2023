@@ -11,10 +11,10 @@ cp_seeds = deepcopy(seeds)
 maps = [[list(map(int, i.split())) for i in d.split("\n")[1:]] for d in data]
 
 for m in maps:
-    for i, v in enumerate(seeds):
-        for d, s, r in m:
-            if s <= v < s + r:
-                seeds[i] = d + v - s
+    for i, value in enumerate(seeds):
+        for destination_start, source_start, map_range in m:
+            if source_start <= value < source_start + map_range:
+                seeds[i] = destination_start + value - source_start
                 break
 
 print("Part 1", min(seeds))
@@ -23,17 +23,17 @@ seeds = deepcopy(cp_seeds)
 ranges = list(zip(seeds[0::2], seeds[1::2]))
 
 for m in maps:
-    for i, (vs, vr) in enumerate(ranges):
-        for d, s, r in m:
-            se = s + r - 1
-            if s <= vs <= se:
-                ve = vs + vr - 1
-                ms = d + vs - s
-                if ve <= se:
-                    ranges[i] = (ms, vr)
+    for i, (value_start, value_range) in enumerate(ranges):
+        for destination_start, source_start, map_range in m:
+            source_end = source_start + map_range - 1
+            if source_start <= value_start <= source_end:
+                value_end = value_start + value_range - 1
+                mapped_start = destination_start + value_start - source_start
+                if value_end <= source_end:
+                    ranges[i] = (mapped_start, value_range)
                 else:
-                    ranges[i] = (ms, se - vs + 1)
-                    ranges.append((se + 1, vr - se + vs - 1))
+                    ranges[i] = (mapped_start, source_end - value_start + 1)
+                    ranges.append((source_end + 1, value_range - source_end + value_start - 1))
                 break
 
 print("Part 2", min(ranges)[0])
