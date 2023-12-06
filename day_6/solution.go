@@ -56,26 +56,12 @@ func parseIntSlice(s []string) []int {
 	return result
 }
 
-func getFirst(t, d int) int {
+func getValue(t, d int) int {
 	for i := 0; i < t; i++ {
 		x := (t - i) * i
 		if x > d {
-			return i
+			return int((float64(t)/2.0-float64(i))*2.0) + 1
 		}
 	}
-	return 0
-}
-
-func getLast(t, d int) int {
-	for i := t - 1; i > 0; i-- {
-		x := (t - i) * i
-		if x > d {
-			return i
-		}
-	}
-	return 0
-}
-
-func getValue(t, d int) int {
-	return getLast(t, d) - getFirst(t, d)
+	return -1
 }

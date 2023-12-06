@@ -9,23 +9,12 @@ distance = process(distance)
 
 p1 = 1
 
-
-def get_first(t, d):
+def get_value(t, d):
     for i in range(t):
         x = (t - i) * i
         if x > d:
-            return i
-
-
-def get_last(t, d):
-    for i in range(t - 1, 0, -1):
-        x = (t - i) * i
-        if x > d:
-            return i
-
-
-def get_value(t, d):
-    return get_last(t, d) - get_first(t, d)
+            return int((t / 2 - i) * 2) + 1
+    return -1
 
 
 for t, d in zip(time, distance):
