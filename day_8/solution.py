@@ -20,7 +20,7 @@ def solution(node, part1):
     while True:
         instruction = instructions[s % len(instructions)]
         node = network_map[node][instruction]
-        if node[[-1, 0][part1] :] == "Z" * [1, 3][part1]:
+        if set(node[[-1, 0][part1] :]) == {"Z"}:
             return s + 1
         s += 1
 
@@ -33,7 +33,8 @@ print(
     lcm(
         *(
             solution(start, part1=False)
-            for start in [start for start in network_map.keys() if start[-1] == "A"]
+            for start in network_map.keys()
+            if start[-1] == "A"
         )
     )
 )
