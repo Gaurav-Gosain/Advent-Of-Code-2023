@@ -21,3 +21,5 @@ I'll try to keep the code as clean as possible, but I'm not making any promises 
 ### Code to join the Heriot-Watt Universities Tech Club leaderboard
 
 > # ```2473134-d6bfe471```
+
+### Link to the leaderboard: [https://aoc2023.gauravgosain.dev/leaderboard](https://aoc2023.gauravgosain.dev/leaderboard)
