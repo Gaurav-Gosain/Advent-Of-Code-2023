@@ -4,7 +4,6 @@ from collections import defaultdict
 
 s = list(filter(None, open(0).read().splitlines()))
 
-# (x,y) =>[(x,y),...]
 con = defaultdict(list)
 
 st = 0, 0
@@ -32,7 +31,6 @@ lc = st
 ls = -1, -1
 pt = []
 while not pt or lc != st:
-    # print(lc)
     nx = con[lc][1] if con[lc][0] == ls else con[lc][0]
     ls = lc
     lc = nx
@@ -75,8 +73,6 @@ q = [(1, 1)]
 are = set()
 while q:
     c = q.pop()
-    # if c in vis:continue
-    # vis.add(c)
     if vis[c[0]][c[1]]:
         continue
     vis[c[0]][c[1]] = 1
@@ -84,7 +80,6 @@ while q:
         are.add((c[0] // 3, c[1] // 3))
     for n, m in [(-1, 0), (0, 1), (0, -1), (1, 0)]:
         i, j = c[0] + n, c[1] + m
-        # if (i,j) in vis:continue
         if i < 0 or j < 0:
             continue
         if i >= len(mp) or j >= len(mp[0]):
