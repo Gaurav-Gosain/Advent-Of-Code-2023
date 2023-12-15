@@ -6,9 +6,7 @@ data = open(0).read().strip().split(",")
 def find_hash(s):
     v = 0
     for c in s:
-        v += ord(c)
-        v *= 17
-        v = v % 0x100
+        v = ((v + ord(c)) * 17) % 0x100
     return v
 
 
@@ -21,16 +19,16 @@ for item in data:
         power = int(power)
         box = boxes[find_hash(label)]
         found = False
-        for i, lens in enumerate(box):
-            if found := lens[0] == label:
+        for i, (l, _) in enumerate(box):
+            if found := (l == label):
                 box[i] = (label, power)
                 break
 
         if not found:
             box += [(label, power)]
     else:
-        box = boxes[(idx := find_hash((label := item[:-1])))]
-        boxes[idx] = [_ for _ in box if _[0] != label]
+        idx = find_hash((label := item[:-1]))
+        boxes[idx] = [item for item in boxes[idx] if item[0] != label]
 
 print(
     "Part 2:",
