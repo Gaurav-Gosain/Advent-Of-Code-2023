@@ -35,8 +35,8 @@ for item in data:
 print(
     "Part 2:",
     sum(
-        (i + 1) * (j + 1) * lens[1]
+        (i + 1) * (j + 1) * power
         for i, box in enumerate(boxes)
-        for j, lens in enumerate(box)
+        for j, (_, power) in enumerate(box)
     ),
 )
