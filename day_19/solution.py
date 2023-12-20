@@ -7,15 +7,15 @@ flsls, pls = [
     line.split('\n') for line in open(0).read().strip().split('\n\n')
 ]
 
-for l in flsls:
-    name, r = l.split('{')
+for ls in flsls:
+    name, r = ls.split('{')
     r = r[:-1]
     fls[name] = [step.split(':') for step in r.split(',')]
 
 s = 0
 pt = namedtuple('part', list('xmas'))
-for l in pls:
-    p = eval(f'pt({l[1:-1]})')
+for ls in pls:
+    p = eval(f'pt({ls[1:-1]})')
     fl = 'in'
     while fl not in 'AR':
         for *cond, res in fls[fl]:
@@ -30,8 +30,8 @@ for l in pls:
         s += sum(p)
 print("Part 1:", s)
 
-for l in flsls:
-    name, r = l.split('{')
+for ls in flsls:
+    name, r = ls.split('{')
     r = r[:-1]
     fls[name] = [step.split(':') for step in r.split(',')]
 
