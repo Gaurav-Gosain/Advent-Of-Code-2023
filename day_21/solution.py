@@ -74,6 +74,8 @@ def part_1(lines):
 def part_2(lines):
     start = get_start(lines)
 
+    assert start is not None
+
     data = len(lines)
 
     S = start[0]
