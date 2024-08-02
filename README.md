@@ -24,3 +24,5 @@ I'll try to keep the code as clean as possible, but I'm not making any promises 
 
 ### Link to the leaderboard: [2023 Leaderboard](https://aoc2023.gauravgosain.dev/leaderboard)
 ### Link to the Final Calendar: [2023 Calendar](https://aoc2023.gauravgosain.dev/calendar)
+
+---
