@@ -22,7 +22,7 @@ I'll try to keep the code as clean as possible, but I'm not making any promises 
 
 > # ```2473134-d6bfe471```
 
-### Link to the leaderboard: [2023 Leaderboard](https://aoc2023.gauravgosain.dev/leaderboard)
-### Link to the Final Calendar: [2023 Calendar](https://aoc2023.gauravgosain.dev/calendar)
+### Link to the leaderboard: [2023 Leaderboard](https://aoc2023.gaurav.zip/leaderboard)
+### Link to the Final Calendar: [2023 Calendar](https://aoc2023.gaurav.zip/calendar)
 
 ---
